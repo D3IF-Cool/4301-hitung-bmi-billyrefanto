@@ -18,7 +18,7 @@ class SaranFragment : Fragment(){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSaranBinding.inflate(
             layoutInflater, container, false)
         updateUI(args.kategori)
