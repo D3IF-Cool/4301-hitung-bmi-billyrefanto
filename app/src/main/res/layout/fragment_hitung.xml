@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:name="org.d3if4041.hitungbmi.ui.HitungFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<!--    tools:viewBindingIgnore="true">-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
@@ -42,12 +41,12 @@
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/horizontal_margin"
+            android:autofillHints="Masukan berat badan"
             android:ems="10"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:autofillHints="Masukan berat badan" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView3"
@@ -66,12 +65,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/horizontal_margin"
+            android:autofillHints="Masukan Tinggi badan"
             android:ems="10"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/beratEditText"
-            app:layout_constraintTop_toBottomOf="@+id/beratEditText"
-            android:autofillHints="Masukan Tinggi badan" />
+            app:layout_constraintTop_toBottomOf="@+id/beratEditText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +117,7 @@
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
         <Button
-            android:id="@+id/resetBMI"
+            android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -137,6 +136,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
+
         <TextView
             android:id="@+id/bmiTextView"
             android:layout_width="wrap_content"
@@ -147,6 +147,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
             tools:text="BMI: 24,09" />
+
         <TextView
             android:id="@+id/kategoriTextView"
             android:layout_width="wrap_content"
@@ -157,20 +158,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bmiTextView"
             tools:text="Kategori: Ideal" />
+
         <Button
             android:id="@+id/saranButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/lihat_saran"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/shareButton"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/kategoriTextView"
+            app:layout_constraintTop_toBottomOf="@+id/kategoriTextView" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/bagikan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/saranButton"
+            app:layout_constraintTop_toTopOf="@id/saranButton" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/buttonGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="saranButton,shareButton,resetButton"
             tools:visibility="visible" />
 
 
