@@ -4,9 +4,10 @@
     >
 
     <item
-        android:id="@+id/menu_histori"
-        android:icon="@drawable/ic_baseline_history_24"
-        android:title="@string/histori"
+        android:id="@+id/menu_hapus"
+        android:icon="@drawable/ic_baseline_delete_forever_24"
+        android:title="@string/hapus_histori"
         app:showAsAction="ifRoom" />
+
 
 </menu>
